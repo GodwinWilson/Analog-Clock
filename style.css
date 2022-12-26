@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dfbcbc;
+}
+.clock{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(clock.png);
+    background-size: cover;
+    border: 4px solid #dfbcbc;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(0,0,0,0.2), 
+                inset 0 -15px 15px rgba(0,0,0,0.2),
+                inset 0 15px 15px rgba(255,255,255,0.4),
+                inset 0 15px 15px rgba(255,255,255,0.4);
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #b9b7b7;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.clock .hour, .clock .min, .clock .sec{
+    position: absolute;
+}
+.clock .hour, .hr{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc{
+    width: 230px;
+    height: 230px;
+}
+.hr, .mn, .sc {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+}
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #000;
+    border-radius: 6px 6px 0 0;
+    z-index: 2;
+}
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #4d4343;
+    border-radius: 6px 6px 0 0;
+    z-index: 3;
+}
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    z-index: 4;
+}
+@media screen and (max-width: 420px) {
+    .clock{
+        width: 270px;
+        height: 270px;
+    }
+    .clock .hour, .hr{
+        width: 130px;
+        height: 130px;
+    }
+    .clock .min, .mn{
+        width: 160px;
+        height: 160px;
+    }
+    .clock .sec, .sc{
+        width: 190px;
+        height: 190px;
+    }
+    .hr::before{
+        width: 7px;
+        height: 70px;
+    }
+    .mn::before{
+        height: 80px;
+    }
+    .sc::before{
+        height: 120px;
+    }
+}
+@media screen and (max-width: 300px){
+    .clock{
+        width: 220px;
+        height: 220px;
+    }
+    .clock .hour, .hr{
+        width: 100px;
+        height: 100px;
+    }
+    .clock .min, .mn{
+        width: 130px;
+        height: 130px;
+    }
+    .clock .sec, .sc{
+        width: 160px;
+        height: 160px;
+    }
+    .hr::before{
+        height: 50px;
+    }
+    .mn::before{
+        height: 70px;
+    }
+    .sc::before{
+        height: 100px;
+    }
+}
